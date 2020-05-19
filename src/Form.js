@@ -9,8 +9,8 @@ class Form extends React.Component {
     return (
       <form>
         <button type="button" className="btn" id="ConvertFrom">From ( )</button>
-        <input type="text" />
-        <button>To ( )</button>
+        <input type="number" placeholder="Enter Amount Here"/>
+        <button type="button" className="btn" >To ( )</button>
       </form>
     )
   }
