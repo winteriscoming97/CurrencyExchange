@@ -1,10 +1,17 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Conversion from './Conversion';
+import Footer from './Footer';
+import Form from './Form';
+import Nav from './Nav';
+import Table from './Table';
 
+console.log(Conversion);
 function App() {
   return (
     <div className="App">
+      <Nav />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
