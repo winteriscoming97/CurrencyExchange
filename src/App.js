@@ -7,12 +7,11 @@ import Form from './Form';
 import Nav from './Nav';
 import Table from './Table';
 
-console.log(Conversion);
 function App() {
   return (
     <div className="App">
-      <Nav />
-      <header className="App-header">
+        <Nav />
+        <Form />
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -25,7 +24,6 @@ function App() {
         >
           Learn React
         </a>
-      </header>
     </div>
   );
 }
