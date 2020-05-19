@@ -1,3 +1,11 @@
-.navbar p {
-  color: red;
+.navbar {
+  width: 100%;
+  background: white;
+  margin: 0;
+  padding: 0;
+
+}
+
+.navbar h2 {
+  color: blue;
 }

@@ -10,7 +10,8 @@ class Nav extends React.Component {
     return (
       <div className="container navbar">
         <div className="row">
-          <p>This is the navbar</p>
+          <div className="nav-logo"></div>
+          <h2 className="nav-title">This is the navbar</h2>
         </div>
 
       </div>
