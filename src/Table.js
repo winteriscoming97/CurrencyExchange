@@ -1,12 +1,8 @@
 import React from 'react';
 import './Table.css';
 
-class Table extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+function Table (props) {
 
-  render() {
     return(
       <div className="container">
         <h2>Base Conversion Table</h2>
@@ -20,7 +16,7 @@ class Table extends React.Component {
           </thead>
           <tbody>
             <tr>
-            
+
 
             </tr>
           </tbody>
@@ -28,5 +24,5 @@ class Table extends React.Component {
       </div>
     )
   }
-}
+  
 export default Table;
