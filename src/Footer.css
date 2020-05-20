@@ -1,0 +1,11 @@
+footer {
+  background-color: white;
+  height: 50px;
+  margin: 20px 0 0 0;
+  text-align: left;
+}
+
+footer i {
+  font-size: 2em;
+  margin-top: 6px;
+}

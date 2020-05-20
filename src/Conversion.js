@@ -2,17 +2,12 @@ import React from 'react';
 import './Conversion.css';
 
 
-class Conversion extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
+function Conversion (props) {
     return (
       <div className="row">
-        <h1 id="Converted">00000</h1>
+        <h1 id="Converted">0000</h1>
       </div>
     )
   }
-}
+
 export default Conversion;

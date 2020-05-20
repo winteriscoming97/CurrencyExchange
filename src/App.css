@@ -33,3 +33,10 @@
     transform: rotate(360deg);
   }
 }
+
+.btn {
+  width: 100px;
+  height: 50px;
+  background-image: linear-gradient(hsl(0, 0%, 95%) 10%, hsl(0, 0%, 30%) 95%);
+  border-radius: 10px;
+}
