@@ -1,6 +1,15 @@
+.container h2 {
+  display: block;
+  background-color: white;
+  width: 200px;
+  margin: 0 auto;
+
+}
+
 table {
   text-align: center;
   width: 90vw;
   margin: 0 auto;
   background-color: white;
+  margin-top: 20px;
 }
