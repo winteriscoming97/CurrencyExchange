@@ -4,7 +4,7 @@ import './Nav.css';
 function Nav (props) {
 
     return (
-      <nav className="container">
+      <nav>
         <div className="row">
           <div className="nav-logo"></div>
           <h2 className="nav-title">This is the navbar</h2>

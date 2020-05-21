@@ -1,11 +1,10 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Conversion from './Conversion';
-import Footer from './Footer';
-import Form from './Form';
 import Nav from './Nav';
+import Form from './Form';
+import Conversion from './Conversion';
 import Table from './Table';
+import Footer from './Footer';
+import './App.css';
 
 function App() {
   return (
@@ -15,7 +14,6 @@ function App() {
         <Conversion />
         <Table />
         <Footer />
-        <img src={logo} className="App-logo" alt="logo" />
     </div>
   );
 }

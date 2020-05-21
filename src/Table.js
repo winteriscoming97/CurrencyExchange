@@ -6,7 +6,6 @@ function Table (props) {
     return(
       <div className="container">
         <h2>Base Conversion Table</h2>
-        <button type="button" className="btn">Change Base</button>
         <table>
           <thead>
             <tr>
@@ -24,5 +23,5 @@ function Table (props) {
       </div>
     )
   }
-  
+
 export default Table;
