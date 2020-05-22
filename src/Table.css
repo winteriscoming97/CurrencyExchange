@@ -1,9 +1,12 @@
 .table-head {
   display: block;
-  background-color: white;
-  width: 300px;
+  width: 290px;
   height: 80px;
-  margin: 30px auto;
+  margin: 15px auto;
+  border: 4px solid black;
+  background-color: white;
+  display:inline-block;
+
 }
 
 .table-head h2 {
@@ -13,18 +16,22 @@
 
 table {
   text-align: center;
-  width: 90vw;
   margin: 0 auto;
+  width: 80vw;
   background-color: white;
   border-collapse: collapse;
+  border-bottom: 2px solid black;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
 }
 
 thead {
-  background-color: hsl(0, 0%, 80%);
+  background-color: #5a989e;
 }
 
 th {
   font-size: 1.5em;
+  color: white;
 }
 
 tr {
@@ -34,6 +41,7 @@ tr {
 
 tbody {
   font-size: 1.2em;
+  background-color: hsl(50, 40%, 90%);
 }
 
 td {
@@ -41,8 +49,15 @@ td {
 }
 
 .right {
+  width: 20%;
 }
 
 .left {
   width: 30%;
+}
+
+@media (max-width: 576px) {
+  table {
+    width: 100vw;
+  }
 }

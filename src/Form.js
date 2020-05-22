@@ -1,6 +1,8 @@
 import React from 'react';
 import './Form.css';
 
+
+//this has the majority of complex tasks
 class Form extends React.Component {
   constructor(props) {
     super(props);
@@ -22,6 +24,7 @@ componentDidMount() {
   })
 }
 
+//switch button passes value to App's base
 handleSwitch() {
   let prevBase = this.props.baseFrom;
   this.props.changeBaseFrom(this.state.baseTo);
@@ -31,6 +34,7 @@ handleSwitch() {
   })
 }
 
+//Calculation
 handleInput(event) {
   if (event.target.value !== ''){
     this.setState({
@@ -74,6 +78,7 @@ changeBase(event) {
     return (
       <div className="row">
         <form>
+        <label>Base:</label>
         <select name="baseFrom" className="btn" onChange={this.changeBase} value={ baseFrom }>
 
         {Object.keys(rates).map(function(country, index) {
@@ -84,7 +89,7 @@ changeBase(event) {
 
         </select>
           <input type="number" name="input" placeholder="Enter Number Here..." onKeyUp={this.handleInput}/>
-
+          <label>Convert To:</label>
           <select name="baseTo" className="btn" onChange={this.changeBase} value={ baseTo }>
 
           {Object.keys(rates).map(function(country, index) {
@@ -94,7 +99,7 @@ changeBase(event) {
             })}
 
           </select>
-          <button type="button" className="btn" onClick={this.handleSwitch}><i className="fas fa-exchange-alt" ></i></button>
+          <button type="button" className="btn" id="Switch" onClick={this.handleSwitch}><i className="fas fa-exchange-alt" ></i></button>
         </form>
         <h1 id="Converted">{result}</h1>
       </div>
