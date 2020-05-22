@@ -11,17 +11,18 @@ const InitialState = {
   someState: 'a'
 }
 
-//App fetches the data and delays the render until completed
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = localStorage.getItem("appState") ? JSON.parse(localStorage.getItem("appState")) : InitialState;
     this.state = {
       rates: null,
-      baseFrom: 'fff',
+      baseFrom: '',
     }
-
+    this.changeBaseFrom = this.changeBaseFrom.bind(this);
   }
+
+  //App fetches the data and delays the render until completed
 
     componentDidMount() {
       this.loadData();
@@ -29,6 +30,21 @@ class App extends React.Component {
 
     loadData() {
       fetch("https://alt-exchange-rate.herokuapp.com/latest")
+      .then(checkStatus)
+      .then((data) => {
+        this.setState({
+          rates: data.rates,
+          baseFrom: data.base,
+        })
+        console.log(this.state);
+
+      }).catch((error) => {
+        console.log(error);
+      })
+    }
+
+    changeBaseFrom(base) {
+      fetch('https://alt-exchange-rate.herokuapp.com/latest?base=' + base)
       .then(checkStatus)
       .then((data) => {
         this.setState({
@@ -52,11 +68,12 @@ class App extends React.Component {
             return <div />
         }
     const {rates, baseFrom} = this.state;
+    rates[baseFrom] = 1.000;
     return (
     <div className="App">
         <Nav />
-        <Form rates={rates} baseFrom={baseFrom} />
-        <Table />
+        <Form rates={rates} baseFrom={baseFrom} changeBaseFrom={this.changeBaseFrom} />
+        <Table rates={rates} baseFrom={baseFrom} />
         <Footer />
     </div>
   );

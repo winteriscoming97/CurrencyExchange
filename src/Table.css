@@ -1,9 +1,14 @@
-.container h2 {
+.table-head {
   display: block;
   background-color: white;
-  width: 200px;
-  margin: 0 auto;
+  width: 300px;
+  height: 80px;
+  margin: 30px auto;
+}
 
+.table-head h2 {
+  display: inline-block;
+  margin-top: 25px;
 }
 
 table {
@@ -11,5 +16,33 @@ table {
   width: 90vw;
   margin: 0 auto;
   background-color: white;
-  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: hsl(0, 0%, 80%);
+}
+
+th {
+  font-size: 1.5em;
+}
+
+tr {
+  height: 50px;
+  border-top: 2px solid black;
+}
+
+tbody {
+  font-size: 1.2em;
+}
+
+td {
+  height: 60px;
+}
+
+.right {
+}
+
+.left {
+  width: 30%;
 }
