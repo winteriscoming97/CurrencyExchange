@@ -5,4 +5,6 @@ const checkStatus = function (response) {
   throw new Error('Request was either a 404 or 500');
 }
 
+
+
 export default checkStatus;

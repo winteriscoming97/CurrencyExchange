@@ -2,7 +2,6 @@ import React from 'react';
 import './Table.css';
 
 function Table (props) {
-
     return(
       <div className="container">
         <h2>Base Conversion Table</h2>
@@ -14,10 +13,8 @@ function Table (props) {
             </tr>
           </thead>
           <tbody>
-            <tr>
+          
 
-
-            </tr>
           </tbody>
         </table>
       </div>
