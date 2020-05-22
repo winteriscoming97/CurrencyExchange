@@ -3,7 +3,7 @@ import './Table.css';
 
 //table data is filled via loop
 function Table (props) {
-  const { rates } = props;
+  const { rates, baseFrom } = props;
     return(
       <div className="container">
         <div className="table-head floating-box">
@@ -13,7 +13,7 @@ function Table (props) {
           <thead>
             <tr>
             <th className="left">Country</th>
-            <th className="right">Difference from Base</th>
+            <th className="right">Per 1 ({baseFrom})</th>
             </tr>
           </thead>
           <tbody>
@@ -21,7 +21,7 @@ function Table (props) {
             return (
               <tr key={index}>
               <td key={index + 1} className="left">{country}</td>
-              <td key={index + 2} className="right">{rates[country]}</td>
+              <td key={index + 2} className="right">{rates[country].toFixed(4)}</td>
               </tr>
             )
           })

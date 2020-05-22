@@ -21,3 +21,7 @@ nav h2 {
   display: inline-block;
   color: white;
 }
+
+nav span {
+  color: pink;
+}

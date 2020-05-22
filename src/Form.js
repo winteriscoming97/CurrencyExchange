@@ -8,71 +8,79 @@ class Form extends React.Component {
     super(props);
 
     this.state = {
-      baseTo: null,
-      result: 0,
-
+      result: (0).toFixed(4),
 
     }
     this.changeBase = this.changeBase.bind(this);
     this.handleInput = this.handleInput.bind(this);
     this.handleSwitch = this.handleSwitch.bind(this);
-}
-
-componentDidMount() {
-  this.setState({
-    baseTo: Object.keys(this.props.rates)[0],
-  })
+    this.handleCalculation = this.handleCalculation.bind(this);
 }
 
 //switch button passes value to App's base
 handleSwitch() {
-  let prevBase = this.props.baseFrom;
-  this.props.changeBaseFrom(this.state.baseTo);
-  this.setState({
-    baseTo: prevBase,
-    result: 0
-  })
+  this.props.switchBase();
+  this.handleCalculation(1);
 }
 
 //Calculation
 handleInput(event) {
   if (event.target.value !== ''){
     this.setState({
-      result: (event.target.value * this.props.rates[this.state.baseTo])
+      result: (event.target.value * this.props.rates[this.props.baseTo]).toFixed(4)
     })
 
   }
   else {
     this.setState({
-        result: 0
+        result: (0).toFixed(4)
     })
   }
 }
+
+
+handleCalculation(stateNum, value) {
+  const { result } = this.state
+  const { rates, baseTo, baseFrom } = this.props
+  if (stateNum === 1) {
+    this.setState({
+      result: ((result / rates[baseTo]) * (rates[baseFrom] / rates[baseTo])).toFixed(4)
+    })
+  }
+  else if (stateNum === 2) {
+    this.setState({
+      result: ((result / rates[baseFrom]) / rates[value]).toFixed(4)
+    })
+  }
+  else {
+    this.setState({
+      result: ((result / rates[baseTo]) * rates[value]).toFixed(4)
+    })
+  }
+}
+
 
 //handles select value changes
 changeBase(event) {
   if (event.target.name === 'baseFrom'){
     this.props.changeBaseFrom(event.target.value);
-    this.setState({
-      result: 0
-    })
+    this.handleCalculation(2, event.target.value);
+
   }
   else {
-    this.setState({
-      baseTo: event.target.value,
-      result: 0
-    })
+    this.props.changeBaseTo(event.target.value);
+    this.handleCalculation(3, event.target.value);
 
   }
 }
 
 
   render() {
-    if (!this.state.baseTo) {
+    if (!this.props.baseTo) {
       return <div > </div>
     }
-    const { baseTo, result } = this.state;
-    const { baseFrom, rates } =this.props;
+    const { result } = this.state;
+    const { baseFrom, rates, baseTo } =this.props;
 
     //list generation for select options. base is added to the end of the list
     return (
