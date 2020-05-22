@@ -1,5 +1,6 @@
 * {
   font-family: Arial;
+  box-sizing: border-box;
 }
 
 
@@ -44,4 +45,13 @@
   height: 50px;
   background-image: linear-gradient(hsl(0, 0%, 95%) 10%, hsl(0, 0%, 30%) 95%);
   border-radius: 10px;
+}
+
+.btn:hover {
+  background-image: linear-gradient(hsl(0, 0%, 100%) 5%, hsl(0, 0%, 20%) 100%);
+}
+
+.btn:active {
+  background-image: linear-gradient(hsl(0, 0%, 90%) 0%, hsl(0, 0%, 10%) 100%);
+  border: 3px groove;
 }
