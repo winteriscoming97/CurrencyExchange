@@ -1,12 +1,23 @@
 nav {
-  height: 50px;
+  height: 80px;
   width: 100%;
-  background: black;
+  background-color: #5a989e;
   margin: 0 0 40px 0;
   padding: 0;
+  padding-top: 20px;
+  padding-left: 20px;
+  border-bottom: 2px solid #444;
+  text-align: left;
+}
 
+nav i {
+  display: inline-block;
+  font-size: 2em;
+  margin: 5px 10px 0 10px;
+  color: white;
 }
 
 nav h2 {
-  color: blue;
+  display: inline-block;
+  color: white;
 }

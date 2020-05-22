@@ -1,11 +1,12 @@
 import React from 'react';
 import './Table.css';
 
+//table data is filled via loop
 function Table (props) {
   const { rates } = props;
     return(
       <div className="container">
-        <div className="table-head">
+        <div className="table-head floating-box">
           <h2>Base Conversion Table</h2>
         </div>
         <table>
